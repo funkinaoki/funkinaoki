@@ -1,0 +1,17 @@
+<% if current_senmonka.reject %>
+アカウント申請が拒否されました。
+
+<% elsif current_senmonka.acceptance  %>
+<% @questions.each do |question| %><br>
+質問 <%= question.title %><br>
+内容 <%= question.context %><br>
+<form action="/comment/<%=question.id %>" method="post">
+<input name="context" placeholder="回答内容"><br>
+<input type="submit" value="回答を投稿する！">
+</form>
+<% end %>
+
+<% else %>
+まだアカウント承認されていません。<br>
+少々お待ちください。
+<% end %>

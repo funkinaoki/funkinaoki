@@ -7,10 +7,25 @@ end
 
 class User < ActiveRecord::Base
   has_secure_password
-  validates :name,
-  presence: true,
-  format: { with: /\A\w+\z/ }
-  validates :password,
-  length: { in: 5..10}
-  # has_many :tasks
+  has_many :questions
+end
+
+class Question < ActiveRecord::Base
+  belongs_to :user
+  has_many :comments
+  belongs_to :list
+end
+
+class Senmonka < ActiveRecord::Base
+  has_secure_password
+  has_many :comments
+end
+
+class Comment < ActiveRecord::Base
+  belongs_to :question
+  belongs_to :senmonka
+end
+
+class List < ActiveRecord::Base
+  has_many :questions
 end

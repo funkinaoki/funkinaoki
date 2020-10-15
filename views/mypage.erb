@@ -1,0 +1,9 @@
+自分の投稿した質問一覧<br>
+<% current_user.questions.each do |question| %><br>
+質問<br> <%= question.title %><br>
+内容<br> <%= question.context %><br>
+<% question.comments.each do |comment| %><br>
+上記の質問への回答<br><%= comment.comment_context%><br>
+<a href="/comment/<% comment.id %>/best">ベストアンサーに選ぶ<a><br>
+<% end %>
+<% end %>

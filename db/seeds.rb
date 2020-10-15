@@ -1,0 +1,1 @@
+List.create([{name: "健康"},{name: "財務"},{name: "勉学"}])

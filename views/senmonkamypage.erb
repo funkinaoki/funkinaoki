@@ -1,0 +1,7 @@
+<% current_senmonka.comments.each do |comment| %><br>
+ 質問タイトル <%= comment.question.title %><br>
+ 質問内容 <%= comment.question.context%><br>
+ 自身の回答
+<%= comment.comment_context%><br>
+
+<% end %>

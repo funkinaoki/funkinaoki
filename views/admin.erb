@@ -1,0 +1,27 @@
+<% @senmonkas.each do |senmonka| %>
+<%= senmonka.name %>先生・
+<%= senmonka.career%><br>
+承認<a href="/senmonka/<%=senmonka.id%>/acceptance" style="
+<% if senmonka.acceptance %>
+background-color:red;
+<% else %>
+background-color:white;
+<% end %>
+border: 1.5px solid black;
+width: 10px;
+height: 10px;
+display: block;
+"></a>
+
+拒否<a href="/senmonka/<%=senmonka.id%>/reject" style="
+<% if senmonka.reject %>
+background-color:red;
+<% else %>
+background-color:white;
+<% end %>
+border: 1.5px solid black;
+width: 10px;
+height: 10px;
+display: block;
+"></a>
+<% end %>
